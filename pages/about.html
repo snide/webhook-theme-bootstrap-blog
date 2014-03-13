@@ -1,0 +1,12 @@
+{% extends "templates/partials/base.html" %}
+
+{% block content %}
+
+
+  <h1>{{ about.name }}</h1>
+
+  <img src="{{ about.picture_of_you|imageCrop(140,140) }}" class="img-circle" />
+
+  {{ about.body|safe }}
+
+{% endblock %}

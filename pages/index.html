@@ -5,27 +5,28 @@
 
 {% block content %}
 
-  <h1>Hello world!</h1>
+  {# Copy this to any page you want articles data on. #}
+  {% set data = get('articles') %}
 
-  <p>This is your homepage, located at /pages/index.html.</p>
+  {# This is how you set pagination. #}
+  {% set data = paginate(data, 5) %}
 
-  <p><a href="/cms/">Looking for the CMS?</a></p>
-
-  {# Grabs the data to list all the content types (set as multiple) from the CMS. #}
-  {% set types = getTypes() %}
-
-  {# If you have at least content page type, we show a list. #}
-  {% if types|size !== 0 %}
-
-    <h3>Content types you've created in the CMS so far.</h3>
-
-    <ul>
-    {% for type in types %}
-      <li><a href="{{ url(type) }}">{{ type.name }}</a></li>
+  <h2>Articles</h2>
+  {# Scaffolding only outputs the object.name, but feel to use any of the fields from your CMS form here. #}
+  <div class="media">
+    {% for id, object in data %}
+        <a href="{{ url(object) }}" class="pull-left">
+          <img class="media-object" src="{{ object.key_image|imageCrop(64,64) }}">
+        </a>
+        <div class="media-body">
+          <a href="{{ url(object) }}">
+            <h4 class="media-heading">{{ object.name }}</h4>
+          </a>
+          <p>{{ object.short_version }}</p>
+        </div>
     {% endfor %}
-    </ul>
-
-  {% endif %}
-
+  </div>
+  {# The actual pagination template, feel free to edit or replace the default one. #}
+  {% include "templates/partials/paginator.html" %}
 
 {% endblock %}
