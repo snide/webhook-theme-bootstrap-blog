@@ -48,6 +48,17 @@
       },
       {
         "controlType": "textfield",
+        "help": "Want comments? Add your disqus username.",
+        "hidden": false,
+        "label": "Disqus username",
+        "locked": false,
+        "name": "disqus_username",
+        "placeholder": "",
+        "required": false,
+        "showInCms": false
+      },
+      {
+        "controlType": "textfield",
         "help": "Don't include the @ symbol.",
         "hidden": false,
         "label": "Twitter username",

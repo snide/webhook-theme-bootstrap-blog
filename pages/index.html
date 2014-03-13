@@ -11,19 +11,22 @@
   {# This is how you set pagination. #}
   {% set data = paginate(data, 10) %}
 
-  <h2>Articles</h2>
   {# Scaffolding only outputs the object.name, but feel to use any of the fields from your CMS form here. #}
   <div class="media">
     {% for id, object in data %}
         <a href="{{ url(object) }}" class="pull-left">
-          <img class="media-object" src="{{ object.key_image|imageCrop(64,64) }}">
+          <img class="media-object" src="{{ object.key_image|imageCrop(100,100) }}">
         </a>
         <div class="media-body">
           <a href="{{ url(object) }}">
-            <h4 class="media-heading">{{ object.name }}</h4>
+            <h2 class="media-heading">{{ object.name }}</h2>
           </a>
-          <p>{{ object.short_version }}</p>
+          <p class="lead">{{ object.short_version }}</p>
+          <p>
+            <em>Written by {{ object.author.first }} {{ object.author.last }} on {{ object.publish_date }}</em>
+          </p>
         </div>
+        <hr/>
     {% endfor %}
   </div>
   {# The actual pagination template, feel free to edit or replace the default one. #}
