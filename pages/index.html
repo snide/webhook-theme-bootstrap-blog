@@ -11,25 +11,32 @@
   {# This is how you set pagination. #}
   {% set data = paginate(data, 10) %}
 
-  {# Scaffolding only outputs the object.name, but feel to use any of the fields from your CMS form here. #}
-  <div class="media">
-    {% for id, object in data %}
-        <a href="{{ url(object) }}" class="pull-left">
-          <img class="media-object" src="{{ object.key_image|imageCrop(100,100) }}">
-        </a>
-        <div class="media-body">
-          <a href="{{ url(object) }}">
-            <h2 class="media-heading">{{ object.name }}</h2>
-          </a>
-          <p class="lead">{{ object.short_version }}</p>
-          <p>
-            <em>Written by {{ object.author.first }} {{ object.author.last }} on {{ object.publish_date }}</em>
-          </p>
-        </div>
-        <hr/>
+  {% if data.length %}
+
+    {# Scaffolding only outputs the object.name, but feel to use any of the fields from your CMS form here. #}
+    {% for object in data %}
+      <a href="{{ url(object) }}">
+        <img src="{{ object.key_image }}" class="img-responsive"/>
+        <h2>{{ object.name }}</h2>
+      </a>
+
+      <p class="lead">
+        {{ object.short_version }}
+      </p>
+      <p>
+        <em>Written by {{ object.author.first }} {{ object.author.last }} on {{ object.publish_date|date('F d Y') }}</em>
+      </p>
+
+      <hr/>
+
+      {{ item.body|safe }}
+
     {% endfor %}
-  </div>
-  {# The actual pagination template, feel free to edit or replace the default one. #}
-  {% include "templates/partials/paginator.html" %}
+    {# The actual pagination template, feel free to edit or replace the default one. #}
+    {% include "templates/partials/paginator.html" %}
+  {% else %}
+    <h2>Nothing to see here</h2>
+    <a href="/cms/">Duder, go add some articles to the CMS</a>
+  {% endif %}
 
 {% endblock %}
