@@ -1,0 +1,198 @@
+{
+  "aboutme": {
+    "controls": [
+      {
+        "controlType": "textfield",
+        "hidden": false,
+        "label": "Name",
+        "locked": true,
+        "name": "name",
+        "required": true,
+        "showInCms": true
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Create Date",
+        "locked": true,
+        "name": "create_date",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Last Updated",
+        "locked": true,
+        "name": "last_updated",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Publish Date",
+        "locked": true,
+        "name": "publish_date",
+        "required": false,
+        "showInCms": false
+      },
+      {
+        "controlType": "image",
+        "hidden": false,
+        "label": "Picture of you",
+        "locked": false,
+        "name": "picture_of_you",
+        "required": false,
+        "showInCms": true
+      },
+      {
+        "controlType": "textfield",
+        "help": "Don't include the @ symbol.",
+        "hidden": false,
+        "label": "Twitter username",
+        "locked": false,
+        "name": "twitter_username",
+        "required": false,
+        "showInCms": false
+      },
+      {
+        "controlType": "textarea",
+        "help": "Who are you. Describe it in one sentence",
+        "hidden": false,
+        "label": "One liner bio",
+        "locked": false,
+        "meta": {
+          "max": "250"
+        },
+        "name": "one_liner_bio",
+        "required": false,
+        "showInCms": false
+      },
+      {
+        "controlType": "wysiwyg",
+        "hidden": false,
+        "label": "Body",
+        "locked": false,
+        "meta": {
+          "image": true,
+          "link": true,
+          "quote": true,
+          "table": true,
+          "video": true
+        },
+        "name": "body",
+        "required": false,
+        "showInCms": true
+      }
+    ],
+    "name": "About me",
+    "oneOff": true
+  },
+  "articles": {
+    "controls": [
+      {
+        "controlType": "textfield",
+        "hidden": false,
+        "label": "Name",
+        "locked": true,
+        "name": "name",
+        "required": true,
+        "showInCms": true
+      },
+      {
+        "controlType": "image",
+        "help": "This is the image that matches with your Short version below. It shows up in lists and also at the top of your Article.",
+        "hidden": false,
+        "label": "Key image",
+        "locked": false,
+        "meta": {
+          "max": "250"
+        },
+        "name": "key_image",
+        "required": true,
+        "showInCms": true
+      },
+      {
+        "controlType": "name",
+        "hidden": false,
+        "label": "Author",
+        "locked": false,
+        "name": "author",
+        "placeholder": "",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "textarea",
+        "help": "The TLDR of your article. Shows up when we list multiple articles.",
+        "hidden": false,
+        "label": "Short version",
+        "locked": false,
+        "meta": {
+          "max": "250"
+        },
+        "name": "short_version",
+        "required": true,
+        "showInCms": true
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Create Date",
+        "locked": true,
+        "name": "create_date",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Last Updated",
+        "locked": true,
+        "name": "last_updated",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Publish Date",
+        "locked": true,
+        "name": "publish_date",
+        "required": false,
+        "showInCms": false
+      },
+      {
+        "controlType": "wysiwyg",
+        "hidden": false,
+        "label": "Body",
+        "locked": false,
+        "meta": {
+          "image": true,
+          "link": true,
+          "quote": true,
+          "table": true,
+          "video": true
+        },
+        "name": "body",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "gallery",
+        "hidden": false,
+        "label": "Optional Gallery",
+        "locked": false,
+        "meta": {
+          "max": "250"
+        },
+        "name": "optional_gallery",
+        "required": false,
+        "showInCms": false
+      }
+    ],
+    "name": "articles",
+    "oneOff": false
+  }
+}
