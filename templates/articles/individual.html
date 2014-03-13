@@ -4,89 +4,31 @@
 {% extends "templates/partials/base.html" %}
 
 {% block content %}
+  <img src="{{ item.key_image }}" class="img-responsive"/>
 
   <h1>{{ item.name }}</h1>
 
-  <p><a href="/articles/">View a list of all articles</a></p>
+  <p class="lead">
+    {{ item.short_version }}
+  </p>
+  <p>
+    <em>Written by {{ item.author.first }} {{ item.author.last }} on {{ item.publish_date }}</em>
+  </p>
 
+  <hr/>
+
+  {{ item.body|safe }}
+
+  {# List all images from this gallery. #}
   <ul>
-    
+    {% for image in item.optional_gallery %}
       <li>
-        <strong>Name: </strong>
-        
-          {{ item.name }}
-        
+        <img src="{{ image.url|imageSize(200,200) }}">
+        <div>{{ image.caption }}</div>
       </li>
-    
-      <li>
-        <strong>Key image: </strong>
-        
-          <img src="{{ item.key_image }}" />
-
-        
-      </li>
-    
-      <li>
-        <strong>Author: </strong>
-        
-          {{ item.author.first }} {{ item.author.last }}
-
-        
-      </li>
-    
-      <li>
-        <strong>Short version: </strong>
-        
-          {{ item.short_version }}
-        
-      </li>
-    
-      <li>
-        <strong>Create Date: </strong>
-        
-          {{ item.create_date }}
-        
-      </li>
-    
-      <li>
-        <strong>Last Updated: </strong>
-        
-          {{ item.last_updated }}
-        
-      </li>
-    
-      <li>
-        <strong>Publish Date: </strong>
-        
-          {{ item.publish_date }}
-        
-      </li>
-    
-      <li>
-        <strong>Body: </strong>
-        
-          {{ item.body|safe }}
-
-        
-      </li>
-    
-      <li>
-        <strong>Optional Gallery: </strong>
-        
-          {# List all images from this gallery. #}
-<ul>
-  {% for image in item.optional_gallery %}
-    <li>
-      <img src="{{ image.url|imageSize(200,200) }}">
-      <div>{{ image.caption }}</div>
-    </li>
-  {% endfor%}
-</ul>
-
-        
-      </li>
-    
+    {% endfor%}
   </ul>
+
 
 
 {% endblock %}
