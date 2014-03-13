@@ -16,9 +16,9 @@
       {% set types = getTypes() %}
       <ul class="nav navbar-nav">
         {% for type in types %}
-          <li {% if getCurrentURL() == url(type) %}class="active" {% endif %}><a href="{{ url(type) }}">{{ type.name }}</a></li>
+          <li {% if getCurrentUrl() == url(type) %}class="active" {% endif %}><a href="{{ url(type) }}">{{ type.name }}</a></li>
         {% endfor %}
-        <li {% if getCurrentURL() == "/about" %}class="active" {% endif %}><a href="/about/">About me</a></li>
+        <li {% if getCurrentUrl() == "/about/" %}class="active" {% endif %}><a href="/about/">About me</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://www.twitter.com/{{ about.twitter_username }}">@{{ about.twitter_username }}</a></li>
