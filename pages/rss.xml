@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 {# Copy this to any page you want articles data on. #}
-{% set data = get('articles') %}
+{% set data = get('blog') %}
 
 {# This is how you set pagination. #}
 {% set data = paginate(data, 10) %}
 
 <rss version="2.0">
   <channel>
-    <title>Site name</title>
-    <link>http://www.sitename.com</link>
+    <title>{{ getSetting('siteName') }}</title>
+    <link>{{ getSetting('siteUrl') }}</link>
     <description>isdf</description>
     {% for object in data %}
       <item>
