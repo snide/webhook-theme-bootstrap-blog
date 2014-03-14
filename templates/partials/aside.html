@@ -1,6 +1,6 @@
 <div class="text-center">
   {% if about.name %}
-    <img src="{{ about.picture_of_you|imageCrop(140,140) }}" class="img-circle" />
+  <a href="/about/"><img src="{{ about.picture_of_you|imageCrop(140,140) }}" class="img-circle" /></a>
     <h2>{{ about.name }}</h2>
     <p class="lead">{{ about.one_liner_bio }}</p>
 
