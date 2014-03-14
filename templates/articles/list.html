@@ -17,7 +17,7 @@
   <div class="media">
     {% for id, object in data %}
         <a href="{{ url(object) }}" class="pull-left">
-          <img class="media-object" src="{{ object.key_image|imageCrop(100,100) }}">
+          <img class="media-object" src="{{ object.image|imageCrop(100,100) }}">
         </a>
         <div class="media-body">
           <a href="{{ url(object) }}">

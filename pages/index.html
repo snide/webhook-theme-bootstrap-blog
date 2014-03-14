@@ -16,7 +16,7 @@
     {# Scaffolding only outputs the object.name, but feel to use any of the fields from your CMS form here. #}
     {% for object in data %}
       <a href="{{ url(object) }}">
-        <img src="{{ object.key_image }}" class="img-responsive"/>
+        <img src="{{ object.image }}" class="img-responsive"/>
         <h2>{{ object.name }}</h2>
       </a>
 
