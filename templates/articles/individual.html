@@ -13,7 +13,7 @@
     {{ item.short_version }}
   </p>
   <p>
-    <em>Written by {{ item.author.first }} {{ item.author.last }} on {{ item.publish_date }}</em>
+    <em>Written by {{ item.author.first }} {{ item.author.last }} on {{ item.publish_date|date('F d Y') }}</em>
   </p>
 
   <hr/>

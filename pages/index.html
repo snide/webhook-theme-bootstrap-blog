@@ -9,9 +9,7 @@
   {% set data = get('articles') %}
 
   {# This is how you set pagination. #}
-  {% set data = paginate(data, 1) %}
-
-  <h1>Homepage</h1>
+  {% set data = paginate(data, 5) %}
 
   {% if data.length %}
 
