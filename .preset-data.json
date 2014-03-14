@@ -115,12 +115,12 @@
         "controlType": "image",
         "help": "This is the image that matches with your Short version below. It shows up in lists and also at the top of your Article.",
         "hidden": false,
-        "label": "Key image",
+        "label": "Image",
         "locked": false,
         "meta": {
           "max": "250"
         },
-        "name": "key_image",
+        "name": "image",
         "required": true,
         "showInCms": true
       },
@@ -204,6 +204,66 @@
       }
     ],
     "name": "articles",
+    "oneOff": false
+  },
+  "podcasts": {
+    "controls": [
+      {
+        "controlType": "textfield",
+        "hidden": false,
+        "label": "Name",
+        "locked": true,
+        "name": "name",
+        "required": true,
+        "showInCms": true
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Create Date",
+        "locked": true,
+        "name": "create_date",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Last Updated",
+        "locked": true,
+        "name": "last_updated",
+        "required": true,
+        "showInCms": false
+      },
+      {
+        "controlType": "datetime",
+        "hidden": true,
+        "label": "Publish Date",
+        "locked": true,
+        "name": "publish_date",
+        "required": false,
+        "showInCms": false
+      },
+      {
+        "controlType": "audio",
+        "hidden": false,
+        "label": "MP3",
+        "locked": false,
+        "name": "mp3",
+        "required": false,
+        "showInCms": true
+      },
+      {
+        "controlType": "markdown",
+        "hidden": false,
+        "label": "Description",
+        "locked": false,
+        "name": "description",
+        "required": true,
+        "showInCms": false
+      }
+    ],
+    "name": "podcasts",
     "oneOff": false
   }
 }
