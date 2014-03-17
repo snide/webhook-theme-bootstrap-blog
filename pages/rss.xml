@@ -9,11 +9,11 @@
   <channel>
     <title>{{ getSetting('siteName') }}</title>
     <link>{{ getSetting('siteUrl') }}</link>
-    <description>isdf</description>
+    <description></description>
     {% for object in data %}
       <item>
         <title>{{ object.name }}</title>
-        <link>{{ url(object) }}</link>
+        <link>{{ getSetting('siteUrl') }}{{ url(object) }}</link>
         <description>{{ object.deck }}</description>
       </item>
     {% endfor %}
