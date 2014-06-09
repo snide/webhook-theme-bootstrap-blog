@@ -7,13 +7,13 @@
 
 <rss version="2.0">
   <channel>
-    <title>{{ getSetting('siteName') }}</title>
-    <link>{{ getSetting('siteUrl') }}</link>
+    <title>{{ getSetting('site_name') }}</title>
+    <link>{{ getSetting('site_url') }}</link>
     <description></description>
     {% for object in data %}
       <item>
         <title>{{ object.name }}</title>
-        <link>{{ getSetting('siteUrl') }}{{ url(object) }}</link>
+        <link>{{ getSetting('site_url') }}{{ url(object) }}</link>
         <description>{{ object.deck }}</description>
       </item>
     {% endfor %}
