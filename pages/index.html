@@ -16,7 +16,7 @@
     {# Output articles sorted by most recent publish date #}
     {% for object in data|sort("publish_date", true) %}
       <a href="{{ url(object) }}">
-        <img src="{{ object.image }}" class="img-responsive"/>
+        <img src="{{ object.image.url }}" class="img-responsive"/>
         <h2>{{ object.name }}</h2>
       </a>
 

@@ -5,7 +5,7 @@
 
 {% block content %}
 
-  <img src="{{ item.image }}" class="img-responsive"/>
+  <img src="{{ item.image.url }}" class="img-responsive"/>
 
   <h1>{{ item.name }}</h1>
 
@@ -28,7 +28,7 @@
       {% for image in item.optional_gallery %}
         <div class="col-md-3">
           <a href="{{ image.url }}" class="thumbnail">
-            <img src="{{ image.url|imageCrop(200,200) }}" class="img-responsive">
+            <img src="{{ image|imageCrop(200,200) }}" class="img-responsive">
           </a>
         </div>
       {% endfor %}
