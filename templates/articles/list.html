@@ -8,6 +8,9 @@
   {# Copy this to any page you want articles data on. #}
   {% set data = get('articles') %}
 
+  {# Sort by most recently published.#}
+  {% set data = data|sort("publish_date", true)%}
+
   {# This is how you set pagination. #}
   {% set data = paginate(data, 5) %}
 
@@ -15,7 +18,7 @@
   <hr/>
   {# Scaffolding only outputs the object.name, but feel to use any of the fields from your CMS form here. #}
   <div class="media">
-    {% for object in data|sort("publish_date", true) %}
+    {% for object in data %}
         <a href="{{ url(object) }}" class="pull-left">
           <img class="media-object" src="{{ object.image|imageCrop(100,100) }}">
         </a>
